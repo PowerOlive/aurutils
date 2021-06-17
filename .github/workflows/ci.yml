@@ -3,9 +3,9 @@ on: [push, pull_request]
 jobs:
   tests:
     runs-on: ubuntu-latest
-    container: archlinux/base
+    container: archlinux
     steps:
-      - run: pacman -Syu --noconfirm base base-devel shellcheck
+      - run: pacman -Syu --noconfirm base base-devel shellcheck git
       - uses: actions/checkout@v2
 
       - name: Option parsing consistency
